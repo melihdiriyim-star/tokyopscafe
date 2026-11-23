@@ -151,6 +151,8 @@ html{scroll-behavior:smooth}
 .tps-menu-btn::after{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:45%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.85),transparent);transform:translateX(-160%) skewX(-18deg);animation:tpsMenuShine 2.6s ease-in-out infinite;pointer-events:none}
 @keyframes tpsMenuShine{0%,45%{transform:translateX(-160%) skewX(-18deg)}80%,100%{transform:translateX(320%) skewX(-18deg)}}
 @keyframes tpsMenuGlow{0%,100%{box-shadow:0 0 0 0 rgba(91,130,255,0)}60%{box-shadow:0 0 26px 2px rgba(91,130,255,.65)}}
+@keyframes tpsExtraIco{0%,100%{transform:rotate(0)}20%{transform:rotate(-10deg)}40%{transform:rotate(8deg)}60%{transform:rotate(0)}}
+.tps-extra-ico{animation:tpsExtraIco 3s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
 </style>
 <style>.tps-tab{cursor:pointer}.tps-game{overflow:hidden}.tps-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}</style>
@@ -606,9 +608,15 @@ Sen de Google'da yorum yaz</a>
 <div style="font-size: 14px; color: #C2D0FF">1 gün · PS5 + 2 kol</div>
 </div>
 </div>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 20px 24px; border-radius: 18px; border: 1px dashed rgba(255,255,255,.5); background: rgba(255,255,255,.06)">
-<svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
-<div style="font-size: 16px; color: #FFFFFF"><strong>Ek kol ücreti:</strong> kişi başı 75 ₺ <span style="color: #A3A3B5">· Standart Masa ve VIP Loca için 2 kişiden fazlası</span></div>
+<div class="tps-extra" style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; padding: 22px 28px; border-radius: 22px; background: #11111A; border: 1px solid rgba(255,43,43,.45)">
+<div style="display: flex; align-items: center; gap: 16px">
+<span class="tps-extra-ico" style="flex: none; width: 56px; height: 56px; border-radius: 16px; background: rgba(255,43,43,.14); display: flex; align-items: center; justify-content: center">
+<svg width="34" height="24" viewBox="0 0 120 80" aria-hidden="true" fill="none" stroke="#FF2B2B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M30 14h60c14 0 22 10 26 28 4 18 0 30-10 30-8 0-12-8-18-16H32c-6 8-10 16-18 16-10 0-14-12-10-30C8 24 16 14 30 14z"/></svg>
+</span>
+<span style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 20px; color: #FFFFFF">Ek kol</span>
+</div>
+<div style="font-family: Unbounded, sans-serif; font-weight: 900; font-size: 34px; line-height: 1; color: #FF2B2B">+75 ₺<span style="font-family: Inter, sans-serif; font-weight: 600; font-size: 15px; color: #C9C9D6; margin-left: 8px">/ kişi</span></div>
+<div style="font-size: 15px; color: #A3A3B5">Masa ve VIP Loca'da 3. kişiden itibaren</div>
 </div>
 </div>
 </section>
