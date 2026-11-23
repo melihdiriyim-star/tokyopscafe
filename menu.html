@@ -4,55 +4,282 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Menü | Tokyo PS Cafe Çekmeköy</title>
-<meta name="description" content="Tokyo PS Cafe menüsü: içecekler ve atıştırmalıklar. Her gün 12:00–03:00, Çekmeköy.">
+<meta name="description" content="Tokyo PS Cafe menüsü: tost, patates, sıcak ve soğuk içecekler, atıştırmalıklar. Her gün 12:00–03:00, Çekmeköy.">
 <meta name="theme-color" content="#07070C">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&amp;family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@700;900&amp;display=swap" rel="stylesheet">
 <style>
 body{margin:0;background:#07070C}
+html{scroll-behavior:smooth}
 a{color:#FF5A5A;text-decoration:none}a:hover{color:#FF8A8A}
 .tps-btn{transition:transform .2s,box-shadow .2s}
 .tps-btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px -8px rgba(91,130,255,.6)}
-@keyframes tpsSteam{0%{transform:translateY(10px) scaleY(.6);opacity:0}40%{opacity:.8}100%{transform:translateY(-26px) scaleY(1.2);opacity:0}}
-.tps-steam{animation:tpsSteam 2.4s ease-in-out infinite}
-.tps-steam-2{animation-delay:.6s}.tps-steam-3{animation-delay:1.2s}
-@keyframes tpsCup{0%,100%{transform:rotate(0)}50%{transform:rotate(-4deg)}}
-.tps-cup{animation:tpsCup 4s ease-in-out infinite}
+.mt-tab{transition:background .2s,border-color .2s,transform .2s}
+.mt-tab:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4) !important;transform:translateY(-2px)}
+@keyframes miIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.mi-card{animation:miIn .7s cubic-bezier(.2,.7,.2,1) both;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .3s}
+.mi-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.25) !important;box-shadow:0 18px 40px -18px rgba(255,43,43,.45)}
+@keyframes miWiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg) scale(1.08)}75%{transform:rotate(6deg) scale(1.08)}}
+.mi-card:hover .mi-icon svg{animation:miWiggle .6s ease-in-out}
+@keyframes miSteam{0%{transform:translateY(6px);opacity:0}40%{opacity:1}100%{transform:translateY(-8px);opacity:0}}
+.mi-steam path{animation:miSteam 2.2s ease-in-out infinite}
+.mi-steam path:nth-child(2){animation-delay:.5s}.mi-steam path:nth-child(3){animation-delay:1s}
+@keyframes miBub{0%{transform:translateY(6px);opacity:0}30%{opacity:1}100%{transform:translateY(-14px);opacity:0}}
+.mi-bub circle{animation:miBub 1.8s ease-in infinite}
+.mi-bub circle:nth-child(2){animation-delay:.6s}.mi-bub circle:nth-child(3){animation-delay:1.2s}
+@keyframes miPop{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.mi-pop{animation:miPop 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes miTilt{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(4deg)}}
+.mi-tilt{animation:miTilt 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes miBolt{0%,80%,100%{opacity:1}85%,95%{opacity:.2}}
+.mi-bolt{animation:miBolt 2.5s infinite}
+@keyframes miFries{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.mi-fries{animation:miFries 1.6s ease-in-out infinite}
+@keyframes mtLogo{0%,85%,100%{transform:rotate(0)}90%{transform:rotate(-10deg) scale(1.08)}95%{transform:rotate(6deg)}}
+.mt-logo{animation:mtLogo 4s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
 </style>
 </head>
 <body>
-<div style="min-height: 100vh; font-family: Inter, system-ui, sans-serif; color: #EDEDF3; background: #07070C; overflow-x: hidden; display: flex; flex-direction: column">
-<header style="border-bottom: 1px solid rgba(255,255,255,.08)">
-<div style="max-width: 1240px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<div style="min-height: 100vh; font-family: Inter, system-ui, sans-serif; color: #EDEDF3; background: #07070C; overflow-x: hidden">
+<header style="position: sticky; top: 0; z-index: 10; background: rgba(7,7,12,.88); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.08)">
+<div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px">
 <a href="./" style="display: flex; align-items: center; gap: 12px; color: #FFFFFF">
-<img src="images/tokyo-logo.webp" alt="Tokyo PlayStation Cafe logosu" style="width: 56px; height: auto; display: block">
-<span style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; letter-spacing: .04em">TOKYO PS CAFE</span>
+<img class="mt-logo" src="images/tokyo-logo.webp" alt="Tokyo PlayStation Cafe logosu" style="width: 52px; height: auto; display: block">
+<span style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 17px; letter-spacing: .04em">TOKYO PS CAFE</span>
 </a>
-<a class="tps-btn" href="./" style="display: flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.25); color: #FFFFFF; font-weight: 600; font-size: 15px; min-height: 44px; box-sizing: border-box">
+<a class="tps-btn" href="./" style="display: flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.25); color: #FFFFFF; font-weight: 600; font-size: 15px; min-height: 44px; box-sizing: border-box">
 <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
 Ana sayfa</a>
 </div>
+<nav aria-label="Menü kategorileri" style="max-width: 1240px; margin: 0 auto; padding: 0 24px 14px; display: flex; gap: 10px; overflow-x: auto"><a class="mt-tab" href="#atistirmaliklar" style="flex: none; display: flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); color: #FFFFFF; font-weight: 700; font-size: 15px; min-height: 44px; box-sizing: border-box"><span style="width: 10px; height: 10px; border-radius: 50%; background: #FFC531"></span>Atıştırmalıklar</a><a class="mt-tab" href="#sicak" style="flex: none; display: flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); color: #FFFFFF; font-weight: 700; font-size: 15px; min-height: 44px; box-sizing: border-box"><span style="width: 10px; height: 10px; border-radius: 50%; background: #FF2B2B"></span>Sıcak İçecekler</a><a class="mt-tab" href="#soguk" style="flex: none; display: flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); color: #FFFFFF; font-weight: 700; font-size: 15px; min-height: 44px; box-sizing: border-box"><span style="width: 10px; height: 10px; border-radius: 50%; background: #5B82FF"></span>Soğuk İçecekler</a><a class="mt-tab" href="#yemekler" style="flex: none; display: flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); color: #FFFFFF; font-weight: 700; font-size: 15px; min-height: 44px; box-sizing: border-box"><span style="width: 10px; height: 10px; border-radius: 50%; background: #2ECC71"></span>Yemekler</a></nav>
 </header>
-<main style="flex: 1; position: relative; display: flex; align-items: center; justify-content: center; padding: 80px 24px; overflow: hidden">
-<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(50% 50% at 50% 45%, rgba(91,130,255,.18), transparent 70%)"></div>
-<div style="position: relative; max-width: 640px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
-<div class="tps-cup" aria-hidden="true" style="position: relative; width: 120px; height: 120px">
-<span class="tps-steam tps-steam-1" style="position: absolute; left: 38px; top: 0; width: 8px; height: 30px; border-radius: 8px; background: rgba(255,255,255,.5)"></span>
-<span class="tps-steam tps-steam-2" style="position: absolute; left: 56px; top: 0; width: 8px; height: 30px; border-radius: 8px; background: rgba(255,255,255,.5)"></span>
-<span class="tps-steam tps-steam-3" style="position: absolute; left: 74px; top: 0; width: 8px; height: 30px; border-radius: 8px; background: rgba(255,255,255,.5)"></span>
-<svg width="120" height="120" viewBox="0 0 120 120" fill="none" style="position: absolute; inset: 0"><path d="M22 52h66v22a30 30 0 0 1-30 30h-6a30 30 0 0 1-30-30z" fill="#5B82FF"/><path d="M88 58h6a12 12 0 0 1 0 24h-8" stroke="#5B82FF" stroke-width="7" stroke-linecap="round"/><path d="M16 110h88" stroke="rgba(255,255,255,.3)" stroke-width="5" stroke-linecap="round"/></svg>
+<div style="position: relative; overflow: hidden">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(40% 60% at 85% 0%, rgba(255,43,43,.18), transparent 70%), radial-gradient(40% 60% at 10% 10%, rgba(91,130,255,.14), transparent 70%)"></div>
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 64px 24px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="font-size: 14px; font-weight: 700; letter-spacing: .14em; color: #5B82FF">MENÜ · メニュー</div>
+<h1 class="mt-title" style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 900; font-size: clamp(40px, 7vw, 80px); line-height: 1; color: #FFFFFF">Oyun arası <span style="color: #FF2B2B">mola.</span></h1>
+<p style="margin: 0; max-width: 560px; font-size: 18px; line-height: 1.6; color: #C9C9D6">Siparişini masandan ver, oyunun hiç durmasın.</p>
 </div>
-<div style="font-size: 14px; font-weight: 700; letter-spacing: .14em; color: #5B82FF">MENÜ</div>
-<h1 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 900; font-size: clamp(36px, 6vw, 64px); line-height: 1.05; color: #FFFFFF">Menümüz çok yakında burada.</h1>
-<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C9C9D6">Şimdilik ürünlerimiz ve fiyatlarımız için bize WhatsApp'tan yazabilir ya da kafede masadaki menüye göz atabilirsin.</p>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px">
-<a class="tps-btn" href="https://wa.me/905333557657?text=Merhaba%2C%20men%C3%BCn%C3%BCz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; padding: 16px 26px; border-radius: 14px; background: #25D366; color: #07070C; font-weight: 700; font-size: 16px">
+</div>
+<main style="max-width: 1240px; margin: 0 auto; padding: 32px 24px 100px; display: flex; flex-direction: column; gap: 56px">
+<section id="atistirmaliklar" style="scroll-margin-top: 150px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(26px, 3.5vw, 38px); color: #FFFFFF">Atıştırmalıklar</h2>
+<span style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 16px; color: #FFC531">おやつ</span>
+<span aria-hidden="true" style="flex: 1; min-width: 40px; height: 2px; background: linear-gradient(90deg, #FFC531, transparent)"></span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px">
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.00s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #FFC53133, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><path d="M10 46l40-20 4 4v20H10z" fill="#F5D7A1"/><path d="M10 46l40-20 4 4-44 22z" fill="#FFFFFF"/><path d="M10 52h44v4H10z" fill="#8B5A2B"/><path d="M14 47c2 3 4 3 6 0s4 3 6 0 4 3 6 0" stroke="#FF2B2B" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle class="mi-pop" cx="48" cy="22" r="5" fill="#FF2B2B"/><path d="M48 17c1-4 4-6 7-6" stroke="#2E7D50" stroke-width="2" fill="none"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Kek çeşitleri</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #FFC531">40 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.06s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #FFC53133, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><circle cx="32" cy="34" r="20" fill="#D9A15B"/><circle cx="32" cy="34" r="20" fill="none" stroke="#B07A3B" stroke-width="3" stroke-dasharray="3 3"/><circle cx="25" cy="28" r="2.5" fill="#6B3E1E"/><circle cx="38" cy="30" r="2.5" fill="#6B3E1E"/><circle cx="30" cy="40" r="2.5" fill="#6B3E1E"/><circle cx="40" cy="41" r="2" fill="#6B3E1E"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Bisküvi çeşitleri</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #FFC531">50 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.12s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #FFC53133, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><g class="mi-tilt"><path d="M8 24l4 3-4 3 4 3-4 3 4 3-4 3h48l-4-3 4-3-4-3 4-3-4-3 4-3-4-3z" fill="#4A2511"/><rect x="16" y="27" width="32" height="15" rx="3" fill="#7B3F1D"/><path d="M20 34.5h24" stroke="rgba(0,0,0,.25)" stroke-width="2" stroke-dasharray="4 3"/></g></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Eti Karam</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #FFC531">50 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.18s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #FFC53133, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><g class="mi-tilt"><path d="M8 24l4 3-4 3 4 3-4 3 4 3-4 3h48l-4-3 4-3-4-3 4-3-4-3 4-3-4-3z" fill="#B91C1C"/><rect x="16" y="27" width="32" height="15" rx="3" fill="#FFC531"/><path d="M20 34.5h24" stroke="rgba(0,0,0,.25)" stroke-width="2" stroke-dasharray="4 3"/></g></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Eti Canga</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #FFC531">50 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.24s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #FFC53133, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><g class="mi-tilt"><path d="M8 24l4 3-4 3 4 3-4 3 4 3-4 3h48l-4-3 4-3-4-3 4-3-4-3 4-3-4-3z" fill="#7C3AED"/><rect x="16" y="27" width="32" height="15" rx="3" fill="#F472B6"/><path d="M20 34.5h24" stroke="rgba(0,0,0,.25)" stroke-width="2" stroke-dasharray="4 3"/></g></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Boombastic</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #FFC531">40 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.30s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #FFC53133, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><g class="mi-tilt"><path d="M8 24l4 3-4 3 4 3-4 3 4 3-4 3h48l-4-3 4-3-4-3 4-3-4-3 4-3-4-3z" fill="#1D4ED8"/><rect x="16" y="27" width="32" height="15" rx="3" fill="#E7B06A"/><path d="M20 34.5h24" stroke="rgba(0,0,0,.25)" stroke-width="2" stroke-dasharray="4 3"/></g></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Ülker Gofret</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #FFC531">35 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.36s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #FFC53133, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><path d="M22 32l10 26 10-26z" fill="#D9A15B"/><path d="M24 36l14 6M26 44l10 4M28 50l6 2" stroke="#B07A3B" stroke-width="1.5"/><circle class="mi-pop" cx="32" cy="24" r="12" fill="#FFB8C8"/><circle cx="25" cy="30" r="5" fill="#FFB8C8"/><circle cx="39" cy="30" r="5" fill="#FFB8C8"/><circle cx="32" cy="11" r="3" fill="#FF2B2B"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Dondurma</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #FFC531">100 ₺</div>
+</div>
+</div>
+</section>
+<section id="sicak" style="scroll-margin-top: 150px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(26px, 3.5vw, 38px); color: #FFFFFF">Sıcak İçecekler</h2>
+<span style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 16px; color: #FF2B2B">ホット</span>
+<span aria-hidden="true" style="flex: 1; min-width: 40px; height: 2px; background: linear-gradient(90deg, #FF2B2B, transparent)"></span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px">
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.00s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #FF2B2B33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><g class="mi-steam" stroke="rgba(255,255,255,.55)" stroke-width="2.5" stroke-linecap="round" fill="none"><path d="M27 14c-3-4 3-6 0-10"/><path d="M32 14c-3-4 3-6 0-10"/><path d="M37 14c-3-4 3-6 0-10"/></g><path d="M24 22c0 4 3 6 3 12s-4 8-4 14c0 3 4 6 9 6s9-3 9-6c0-6-4-8-4-14s3-8 3-12z" fill="rgba(255,255,255,.12)" stroke="#FFFFFF" stroke-width="2"/><path d="M26.5 32c.6 1 .6 1.5.6 2 0 5-3.6 7.5-3.6 14 0 2.5 3.8 4.5 8.5 4.5s8.5-2 8.5-4.5c0-6.5-3.6-9-3.6-14 0-.5 0-1 .6-2z" fill="#C2410C"/><ellipse cx="32" cy="57" rx="16" ry="3.5" fill="none" stroke="#FFFFFF" stroke-width="2"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Çay</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #FF2B2B">25 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.06s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #FF2B2B33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><g class="mi-steam" stroke="rgba(255,255,255,.55)" stroke-width="2.5" stroke-linecap="round" fill="none"><path d="M27 14c-3-4 3-6 0-10"/><path d="M32 14c-3-4 3-6 0-10"/><path d="M37 14c-3-4 3-6 0-10"/></g><path d="M24 22c0 4 3 6 3 12s-4 8-4 14c0 3 4 6 9 6s9-3 9-6c0-6-4-8-4-14s3-8 3-12z" fill="rgba(255,255,255,.12)" stroke="#FFFFFF" stroke-width="2"/><path d="M26.5 32c.6 1 .6 1.5.6 2 0 5-3.6 7.5-3.6 14 0 2.5 3.8 4.5 8.5 4.5s8.5-2 8.5-4.5c0-6.5-3.6-9-3.6-14 0-.5 0-1 .6-2z" fill="#7E1D52"/><ellipse cx="32" cy="57" rx="16" ry="3.5" fill="none" stroke="#FFFFFF" stroke-width="2"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Karadut</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #FF2B2B">25 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.12s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #FF2B2B33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><g class="mi-steam" stroke="rgba(255,255,255,.55)" stroke-width="2.5" stroke-linecap="round" fill="none"><path d="M27 14c-3-4 3-6 0-10"/><path d="M32 14c-3-4 3-6 0-10"/><path d="M37 14c-3-4 3-6 0-10"/></g><path d="M24 22c0 4 3 6 3 12s-4 8-4 14c0 3 4 6 9 6s9-3 9-6c0-6-4-8-4-14s3-8 3-12z" fill="rgba(255,255,255,.12)" stroke="#FFFFFF" stroke-width="2"/><path d="M26.5 32c.6 1 .6 1.5.6 2 0 5-3.6 7.5-3.6 14 0 2.5 3.8 4.5 8.5 4.5s8.5-2 8.5-4.5c0-6.5-3.6-9-3.6-14 0-.5 0-1 .6-2z" fill="#D9A441"/><ellipse cx="32" cy="57" rx="16" ry="3.5" fill="none" stroke="#FFFFFF" stroke-width="2"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Elma</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #FF2B2B">25 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.18s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #FF2B2B33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><g class="mi-steam" stroke="rgba(255,255,255,.55)" stroke-width="2.5" stroke-linecap="round" fill="none"><path d="M27 14c-3-4 3-6 0-10"/><path d="M32 14c-3-4 3-6 0-10"/><path d="M37 14c-3-4 3-6 0-10"/></g><path d="M24 22c0 4 3 6 3 12s-4 8-4 14c0 3 4 6 9 6s9-3 9-6c0-6-4-8-4-14s3-8 3-12z" fill="rgba(255,255,255,.12)" stroke="#FFFFFF" stroke-width="2"/><path d="M26.5 32c.6 1 .6 1.5.6 2 0 5-3.6 7.5-3.6 14 0 2.5 3.8 4.5 8.5 4.5s8.5-2 8.5-4.5c0-6.5-3.6-9-3.6-14 0-.5 0-1 .6-2z" fill="#F97316"/><ellipse cx="32" cy="57" rx="16" ry="3.5" fill="none" stroke="#FFFFFF" stroke-width="2"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Oralet</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #FF2B2B">25 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.24s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #FF2B2B33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><g class="mi-steam" stroke="rgba(255,255,255,.55)" stroke-width="2.5" stroke-linecap="round" fill="none"><path d="M24 16c-3-4 3-6 0-10"/><path d="M31 16c-3-4 3-6 0-10"/><path d="M38 16c-3-4 3-6 0-10"/></g><path d="M16 24h30v20a10 10 0 0 1-10 10h-10a10 10 0 0 1-10-10z" fill="#FFFFFF"/><path d="M46 29h4a6 6 0 0 1 0 12h-4" fill="none" stroke="#FFFFFF" stroke-width="4"/><rect x="19" y="27" width="24" height="5" rx="2" fill="#6B3E1E"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Nescafe</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #FF2B2B">35 ₺</div>
+</div>
+</div>
+</section>
+<section id="soguk" style="scroll-margin-top: 150px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(26px, 3.5vw, 38px); color: #FFFFFF">Soğuk İçecekler</h2>
+<span style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 16px; color: #5B82FF">コールド</span>
+<span aria-hidden="true" style="flex: 1; min-width: 40px; height: 2px; background: linear-gradient(90deg, #5B82FF, transparent)"></span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px">
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.00s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #5B82FF33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><path d="M27 6h10v8c0 3 6 6 6 12v28a4 4 0 0 1-4 4H25a4 4 0 0 1-4-4V26c0-6 6-9 6-12z" fill="rgba(160,220,200,.35)" stroke="#FFFFFF" stroke-width="2"/><rect x="26" y="4" width="12" height="5" rx="1.5" fill="#2E7D50"/><rect x="21" y="32" width="22" height="12" fill="rgba(255,255,255,.85)"/><g class="mi-bub" fill="rgba(255,255,255,.75)"><circle cx="28" cy="46" r="1.6"/><circle cx="35" cy="52" r="1.3"/><circle cx="32" cy="58" r="1.1"/></g></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Sade soda</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #5B82FF">35 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.06s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #5B82FF33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><path d="M27 6h10v8c0 3 6 6 6 12v28a4 4 0 0 1-4 4H25a4 4 0 0 1-4-4V26c0-6 6-9 6-12z" fill="rgba(255,140,160,.55)" stroke="#FFFFFF" stroke-width="2"/><rect x="26" y="4" width="12" height="5" rx="1.5" fill="#FF2B2B"/><rect x="21" y="32" width="22" height="12" fill="rgba(255,255,255,.85)"/><g class="mi-bub" fill="rgba(255,255,255,.75)"><circle cx="28" cy="46" r="1.6"/><circle cx="35" cy="52" r="1.3"/><circle cx="32" cy="58" r="1.1"/></g></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Meyveli soda</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #5B82FF">40 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.12s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #5B82FF33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><path d="M18 22l6-8h16l6 8v34H18z" fill="#F97316"/><path d="M18 22h28" stroke="rgba(0,0,0,.2)" stroke-width="2"/><rect x="22" y="30" width="20" height="16" rx="3" fill="#FFC531"/><path d="M38 14l4-10" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="38" r="4" fill="rgba(255,255,255,.7)"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Link</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #5B82FF">40 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.18s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #5B82FF33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><path d="M18 16h28l-4 40H22z" fill="rgba(255,255,255,.12)" stroke="#FFFFFF" stroke-width="2"/><path d="M19.5 26h25l-3.1 29H22.6z" fill="#C27C2C"/><rect x="24" y="28" width="7" height="7" rx="1.5" fill="rgba(255,255,255,.55)"/><rect x="33" y="32" width="7" height="7" rx="1.5" fill="rgba(255,255,255,.45)"/><path d="M36 6l-4 22" stroke="#FF2B2B" stroke-width="3" stroke-linecap="round"/><circle cx="40" cy="18" r="6" fill="#FFE066" stroke="#E9B800" stroke-width="1.5"/><g class="mi-bub" fill="rgba(255,255,255,.75)"><circle cx="26" cy="44" r="1.6"/><circle cx="33" cy="50" r="1.3"/><circle cx="30" cy="56" r="1.1"/></g></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Ice Tea</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #5B82FF">70 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.24s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #5B82FF33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><path d="M18 16h28l-4 40H22z" fill="rgba(255,255,255,.12)" stroke="#FFFFFF" stroke-width="2"/><path d="M19.5 26h25l-3.1 29H22.6z" fill="#3B1F14"/><rect x="24" y="28" width="7" height="7" rx="1.5" fill="rgba(255,255,255,.55)"/><rect x="33" y="32" width="7" height="7" rx="1.5" fill="rgba(255,255,255,.45)"/><path d="M36 6l-4 22" stroke="#FF2B2B" stroke-width="3" stroke-linecap="round"/><g class="mi-bub" fill="rgba(255,255,255,.75)"><circle cx="26" cy="44" r="1.6"/><circle cx="33" cy="50" r="1.3"/><circle cx="30" cy="56" r="1.1"/></g></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Kola</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #5B82FF">80 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.30s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #5B82FF33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><path d="M27 6h10v8c0 3 6 6 6 12v28a4 4 0 0 1-4 4H25a4 4 0 0 1-4-4V26c0-6 6-9 6-12z" fill="rgba(255,255,255,.35)" stroke="#FFFFFF" stroke-width="2"/><rect x="26" y="4" width="12" height="5" rx="1.5" fill="#5B82FF"/><rect x="21" y="32" width="22" height="12" fill="rgba(255,255,255,.85)"/><g class="mi-bub" fill="rgba(255,255,255,.75)"><circle cx="28" cy="46" r="1.6"/><circle cx="35" cy="52" r="1.3"/><circle cx="32" cy="58" r="1.1"/></g></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Gazoz</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #5B82FF">65 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.36s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #5B82FF33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><rect x="20" y="10" width="24" height="46" rx="5" fill="#1E293B"/><rect x="20" y="10" width="24" height="5" rx="2" fill="#C9CBD6"/><rect x="20" y="51" width="24" height="5" rx="2" fill="#C9CBD6"/><path d="M20 30l24-8v10l-24 8z" fill="#5B82FF"/><path class="mi-bolt" d="M34 32l-6 9h5l-3 7 7-10h-5z" fill="#FFFFFF"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Enerji içeceği</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #5B82FF">70 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.42s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #5B82FF33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><path d="M18 22l6-8h16l6 8v34H18z" fill="#6B3E1E"/><path d="M18 22h28" stroke="rgba(0,0,0,.2)" stroke-width="2"/><rect x="22" y="30" width="20" height="16" rx="3" fill="#F5D7A1"/><path d="M38 14l4-10" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="38" r="4" fill="rgba(255,255,255,.7)"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Çikolatalı süt</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #5B82FF">40 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.48s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #5B82FF33, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><path d="M16 14h32l-2 42H18z" fill="#5B82FF"/><path d="M16 14h32" stroke="#C9CBD6" stroke-width="4"/><path d="M38 14l4-10" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="36" r="9" fill="#FFC531"/><path d="M28 36h8M32 32v8" stroke="#F97316" stroke-width="2"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Capri-Sun</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #5B82FF">40 ₺</div>
+</div>
+</div>
+</section>
+<section id="yemekler" style="scroll-margin-top: 150px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(26px, 3.5vw, 38px); color: #FFFFFF">Yemekler</h2>
+<span style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: 16px; color: #2ECC71">フード</span>
+<span aria-hidden="true" style="flex: 1; min-width: 40px; height: 2px; background: linear-gradient(90deg, #2ECC71, transparent)"></span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px">
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.00s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #2ECC7133, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><path d="M12 36c0-14 9-24 20-24s20 10 20 24v8H12z" fill="#E7B06A"/><path d="M15 36c0-12 7.5-21 17-21s17 9 17 21v6H15z" fill="#F7D9A3"/><path d="M20 24l24 14M18 32l20 12M28 18l18 10" stroke="#C98A3E" stroke-width="2.5" stroke-linecap="round" opacity=".7"/><path d="M14 40h36v4c-3 0-3 6-6 6s-3-6-6-6-3 8-6 8-3-8-6-8-3 4-6 4-3-4-6-4z" fill="#FFC531"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Kaşarlı tost</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #2ECC71">150 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.06s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #2ECC7133, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><path d="M12 36c0-14 9-24 20-24s20 10 20 24v8H12z" fill="#E7B06A"/><path d="M15 36c0-12 7.5-21 17-21s17 9 17 21v6H15z" fill="#F7D9A3"/><path d="M20 24l24 14M18 32l20 12M28 18l18 10" stroke="#C98A3E" stroke-width="2.5" stroke-linecap="round" opacity=".7"/><path d="M14 40h36v4c-3 0-3 6-6 6s-3-6-6-6-3 8-6 8-3-8-6-8-3 4-6 4-3-4-6-4z" fill="#FFC531"/><circle cx="24" cy="41" r="3.5" fill="#B91C1C"/><circle cx="38" cy="41" r="3.5" fill="#B91C1C"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Karışık tost</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #2ECC71">180 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.12s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #2ECC7133, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><path d="M12 36c0-14 9-24 20-24s20 10 20 24v8H12z" fill="#E7B06A"/><path d="M15 36c0-12 7.5-21 17-21s17 9 17 21v6H15z" fill="#F7D9A3"/><path d="M20 24l24 14M18 32l20 12M28 18l18 10" stroke="#C98A3E" stroke-width="2.5" stroke-linecap="round" opacity=".7"/><path d="M14 40h36v4c-3 0-3 6-6 6s-3-6-6-6-3 8-6 8-3-8-6-8-3 4-6 4-3-4-6-4z" fill="#FF2B2B"/><circle cx="22" cy="42" r="3" fill="#FFC531"/><circle cx="33" cy="43" r="3" fill="#FFFFFF"/><circle cx="43" cy="42" r="2.5" fill="#2E7D50"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Pizza tost</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #2ECC71">200 ₺</div>
+</div>
+<div class="mi-card" style="display: flex; align-items: center; gap: 16px; padding: 14px 18px 14px 14px; border-radius: 20px; background: #11111A; border: 1px solid rgba(255,255,255,.08); animation-delay: 0.18s">
+<div class="mi-icon" style="flex: none; width: 72px; height: 72px; border-radius: 16px; background: radial-gradient(circle at 50% 60%, #2ECC7133, #0C0C14 75%); display: flex; align-items: center; justify-content: center">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true" style="overflow: visible"><g class="mi-fries"><rect x="20" y="8" width="5" height="26" rx="2" fill="#FFC531" transform="rotate(-10 22 21)"/><rect x="27" y="5" width="5" height="28" rx="2" fill="#FFD95A"/><rect x="34" y="7" width="5" height="27" rx="2" fill="#FFC531" transform="rotate(8 36 20)"/><rect x="40" y="10" width="5" height="24" rx="2" fill="#FFD95A" transform="rotate(16 42 22)"/></g><path d="M14 28h36l-5 28H19z" fill="#FF2B2B"/><path d="M21 38c4 4 18 4 22 0" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+</div>
+<div style="flex: 1; min-width: 0; font-weight: 700; font-size: 17px; color: #FFFFFF">Patates tabağı</div>
+<div style="flex: none; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 18px; color: #2ECC71">160 ₺</div>
+</div>
+</div>
+</section>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 24px 28px; border-radius: 24px; background: #11111A; border: 1px solid rgba(255,255,255,.1)">
+<div style="font-size: 16px; color: #C9C9D6">Masa veya VIP Loca ayırtmak için bize yaz.</div>
+<a class="tps-btn" href="https://wa.me/905333557657?text=Merhaba%2C%20Tokyo%20PS%20Cafe%27de%20rezervasyon%20yapmak%20istiyorum." target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 14px; background: #25D366; color: #07070C; font-weight: 700; font-size: 15px">
 <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.7-4.9A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.6-2-1-1 .8a4 4 0 0 1-1.9-1.9l.8-1-1-2z"/></svg>
-WhatsApp ile sor</a>
-<a class="tps-btn" href="./" style="padding: 16px 26px; border-radius: 14px; border: 1px solid rgba(255,255,255,.25); color: #FFFFFF; font-weight: 600; font-size: 16px">Ana sayfaya dön</a>
-</div>
+WhatsApp ile rezervasyon</a>
 </div>
 </main>
 <footer style="border-top: 1px solid rgba(255,255,255,.08); padding: 24px">
