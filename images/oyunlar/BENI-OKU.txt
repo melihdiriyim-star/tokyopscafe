@@ -1,0 +1,17 @@
+OYUN KAPAKLARI BU KLASÖRE
+=========================
+Kapak görsellerini bu klasöre AŞAĞIDAKİ İSİMLERLE koyun (küçük harf, .jpg):
+
+  fc27.jpg            -> FC 27
+  gta6.jpg            -> GTA VI
+  pes2021.jpg         -> PES 2021
+  assetto-corsa.jpg   -> Assetto Corsa
+  ets2.jpg            -> ETS 2
+
+- Dikey (portre) görsel en iyisi; yaklaşık 600x800 piksel yeterli.
+- Hangi dosyayı koyarsanız o kart görselle görünür. Koymadığınız oyun
+  yazılı kart olarak kalır, site bozulmaz.
+- Görsel PNG ise önce .jpg'ye çevirin ya da index.html içinde ilgili
+  ".jpg" yazısını ".png" yapın.
+- Not: Oyun kapaklarının hakları yapımcı firmalara aittir. Mümkünse
+  firmaların basın/medya sayfalarından resmi görselleri kullanın.

@@ -1,0 +1,66 @@
+TOKYO PS CAFE WEB SİTESİ KURULUMU
+==================================
+
+Bu klasörde siteniz hazır durumdadır:
+  index.html      -> sitenin kendisi
+  images/         -> logo, mekân fotoğrafları, site simgesi (favicon)
+
+Klasörün yapısını bozmayın: index.html ile images klasörü hep yan yana durmalı.
+
+
+1) ÜCRETSİZ YAYINLAMA (en kolay yol: Netlify Drop)
+--------------------------------------------------
+  1. https://app.netlify.com/drop adresine gidin.
+  2. Ücretsiz bir hesap açın (Google hesabınızla da girebilirsiniz).
+  3. Bu "tokyopscafe" klasörünü sayfadaki kutunun içine sürükleyip bırakın.
+  4. Birkaç saniye sonra siteniz "xxxx.netlify.app" gibi bir adreste yayında olur.
+  5. Site ayarlarından (Site configuration > Change site name) adresi
+     "tokyopscafe.netlify.app" gibi bir şeyle değiştirebilirsiniz.
+
+  Siteyi güncellemek için: Netlify'da sitenizin "Deploys" sekmesine girin ve
+  yeni klasörü yine sürükleyip bırakın.
+
+
+2) KENDİ ALAN ADINIZ (örn. tokyopscafe.com / tokyopscafe.com.tr)
+----------------------------------------------------------------
+  1. Bir alan adı firmasından (Natro, İsimtescil, Turhost, GoDaddy vb.)
+     alan adınızı satın alın.
+  2. Netlify'da: Domain management > Add a domain > alan adınızı yazın.
+  3. Netlify size DNS ayarlarını gösterir. Bunları alan adını aldığınız
+     firmanın panelinde "DNS Yönetimi" kısmına girin (veya Netlify'ın
+     "nameserver" adreslerini kullanın).
+  4. Bağlanması birkaç saat sürebilir. HTTPS (kilit simgesi) Netlify
+     tarafından ücretsiz ve otomatik açılır.
+
+
+3) ALAN ADINI ALDIKTAN SONRA TEK DEĞİŞİKLİK
+-------------------------------------------
+  index.html dosyasını Not Defteri (veya VS Code) ile açın, şu satırı bulun:
+     <meta property="og:image" content="images/og-image.jpg">
+  ve şöyle yapın (kendi adresinizle):
+     <meta property="og:image" content="https://tokyopscafe.com/images/og-image.jpg">
+  Bu sayede WhatsApp/Instagram'da link paylaşınca logonuzlu önizleme çıkar.
+
+
+4) YAYINDAN SONRA YAPILACAKLAR
+------------------------------
+  - Instagram profilinizdeki "Bağlantı" kısmına site adresini ekleyin.
+  - Google İşletme Profilinize (Google Maps) "Web sitesi" olarak ekleyin.
+  - Google Search Console'a sitenizi ekleyin (Google'da çıkması hızlanır).
+
+
+5) SIK DEĞİŞEN BİLGİLER (index.html içinde arayıp değiştirin)
+-------------------------------------------------------------
+  Fiyatlar  : "250 ₺", "350 ₺", "1.250 ₺", "75 ₺" yazılarını aratın.
+  Saatler   : "12:00 – 03:00" yazısını aratın.
+  Telefon   : "905333557657" ve "0533 355 76 57" yazılarını aratın.
+  Fotoğraf  : images klasöründeki dosyayı AYNI İSİMLE yenisiyle değiştirin
+              (örn. yeni simülasyon fotoğrafını "sim.webp" adıyla koyun).
+
+
+6) OYUN KAPAKLARINI EKLEMEK
+---------------------------
+  Ana ekranda dönen oyun kartlarına kapak görseli koymak için:
+  images/oyunlar klasörüne fc27.jpg, gta6.jpg, pes2021.jpg,
+  assetto-corsa.jpg, ets2.jpg isimleriyle görselleri koyun.
+  Ayrıntılar: images/oyunlar/BENI-OKU.txt
