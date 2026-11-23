@@ -63,7 +63,7 @@ html{scroll-behavior:smooth}
 .tps-gal img{transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s;filter:saturate(1.05)}
 .tps-gal:hover{transform:translateY(-12px) rotate(-1deg);border-color:#FF2B2B !important;box-shadow:0 30px 60px -20px rgba(255,43,43,.5)}
 .tps-gal:hover img{transform:scale(1.12);filter:saturate(1.3)}
-.tps-g2,.tps-g4{margin-top:40px !important}
+
 @media (max-width:700px){.tps-g2,.tps-g4{margin-top:0 !important}}
 .tps-g1{animation:tpsRise .9s .05s both}.tps-g2{animation:tpsRise .9s .15s both}.tps-g3{animation:tpsRise .9s .25s both}.tps-g4{animation:tpsRise .9s .35s both}.tps-g5{animation:tpsRise .9s .45s both}
 @keyframes tpsBgFade{0%{opacity:0;transform:scale(1.05)}8%,30%{opacity:.7}38%,100%{opacity:0;transform:scale(1.18)}}
@@ -130,6 +130,12 @@ html{scroll-behavior:smooth}
 .tps-ring:hover{animation-play-state:paused}
 .tps-game{transition:box-shadow .3s}
 @media (max-width:900px){.tps-deco-ring{display:none}}
+.tps-bento{animation:tpsRise .9s both}
+.tps-b-big{grid-column:span 2;grid-row:span 2}
+.tps-b-tall{grid-row:span 2}
+@media (max-width:900px){.tps-bento-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;grid-auto-rows:220px !important}.tps-b-big{grid-column:span 2;grid-row:span 1}.tps-b-tall{grid-row:span 2}}
+.tps-sim-photo img{transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s;filter:saturate(1.1)}
+.tps-card:hover .tps-sim-photo img{transform:scale(1.1);filter:saturate(1.35)}
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
 </style>
 <style>.tps-tab{cursor:pointer}.tps-game{overflow:hidden}.tps-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}</style>
@@ -161,9 +167,9 @@ Rezervasyon</a>
 <section id="top" class="tps-scan" style="position: relative; overflow: hidden; min-height: 860px; display: flex; align-items: center">
 <div class="tps-grid" aria-hidden="true" style="position: absolute; left: -20%; right: -20%; bottom: -10%; height: 55%; transform: perspective(600px) rotateX(62deg); transform-origin: bottom; opacity: .9"></div>
 <div aria-hidden="true" style="position: absolute; inset: -60px; overflow: hidden">
-<img src="images/neon.webp" alt="" class="tps-bgfade" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(28px) saturate(1.3); opacity: 0">
-<img src="images/sim.webp" alt="" class="tps-bgfade tps-bgfade-2" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(28px) saturate(1.3); opacity: 0">
-<img src="images/bar.webp" alt="" class="tps-bgfade tps-bgfade-3" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(28px) saturate(1.3); opacity: 0">
+<img src="images/neon-pes.webp" alt="" class="tps-bgfade" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(28px) saturate(1.3); opacity: 0">
+<img src="images/sim-salon.webp" alt="" class="tps-bgfade tps-bgfade-2" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(28px) saturate(1.3); opacity: 0">
+<img src="images/vip-fc.webp" alt="" class="tps-bgfade tps-bgfade-3" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(28px) saturate(1.3); opacity: 0">
 </div>
 <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,7,12,.55), rgba(7,7,12,.82) 70%, #07070C)"></div>
 <div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(60% 50% at 50% 38%, rgba(255,43,43,.22), transparent 70%)"></div>
@@ -400,21 +406,25 @@ HER GÜN 12:00 – 03:00 · ÇEKMEKÖY
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
 <div class="tps-card" style="padding: 32px; border-radius: 24px; background: #11111A; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 16px">
+<div class="tps-sim-photo" style="margin: -32px -32px 4px; height: 170px; overflow: hidden; border-radius: 24px 24px 0 0"><img src="images/moza.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block"></div>
 <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="2.5"></circle><path d="M3.5 10h6M14.5 10h6M12 14.5V21"></path></svg>
 <div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 24px; color: #FFFFFF">Moza R3</div>
 <div style="font-size: 16px; line-height: 1.6; color: #A3A3B5">Direct drive direksiyon tabanı ve pedal seti ile hassas, güçlü geri bildirim.</div>
 </div>
 <div class="tps-card" style="padding: 32px; border-radius: 24px; background: #11111A; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 16px">
+<div class="tps-sim-photo" style="margin: -32px -32px 4px; height: 170px; overflow: hidden; border-radius: 24px 24px 0 0"><img src="images/sim-salon.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block"></div>
 <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#5B82FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
 <div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 24px; color: #FFFFFF">34" monitör</div>
 <div style="font-size: 16px; line-height: 1.6; color: #A3A3B5">Geniş ekran görüş alanı, kokpitte olduğun hissini veriyor.</div>
 </div>
 <div class="tps-card" style="padding: 32px; border-radius: 24px; background: #11111A; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 16px">
+<div class="tps-sim-photo" style="margin: -32px -32px 4px; height: 170px; overflow: hidden; border-radius: 24px 24px 0 0"><img src="images/direksiyon.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 45%; display: block"></div>
 <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#FF2B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"></path></svg>
 <div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 24px; color: #FFFFFF">180Hz</div>
 <div style="font-size: 16px; line-height: 1.6; color: #A3A3B5">Akıcı görüntü, gecikmesiz tepki. Fren noktasını kaçırmak yok.</div>
 </div>
 <div class="tps-card tps-shift-card" style="padding: 32px; border-radius: 24px; background: #11111A; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 16px">
+<div class="tps-sim-photo" style="margin: -32px -32px 4px; height: 170px; overflow: hidden; border-radius: 24px 24px 0 0"><img src="images/kokpit-vites.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: 75% 62%; display: block"></div>
 <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4v16M12 4v16M19 4v16M5 12h14"/><circle class="tps-shift-knob" cx="5" cy="4" r="2.6" fill="#FF2B2B" stroke="#FF2B2B"/></svg>
 <div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 24px; color: #FFFFFF">H manuel vites</div>
 <div style="font-size: 16px; line-height: 1.6; color: #A3A3B5">Thrustmaster H vites kolu ile vitesleri elle at, debriyajla kalkışı gerçekten hisset.</div>
@@ -435,40 +445,54 @@ HER GÜN 12:00 – 03:00 · ÇEKMEKÖY
 Instagram'da daha fazlası
 </a>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px">
-<figure class="tps-gal tps-g1" style="margin: 0; position: relative; overflow: hidden; border-radius: 22px; aspect-ratio: 3 / 4; background: #11111A; border: 1px solid rgba(255,255,255,.1)">
-<img src="images/sim.webp" alt="Simülasyon kokpiti — Moza R3 ve kavisli monitör" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block">
+<div class="tps-bento-grid" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 250px; grid-auto-flow: dense; gap: 18px">
+<figure class="tps-gal tps-bento tps-b-big" style="margin: 0; position: relative; overflow: hidden; border-radius: 22px; background: #11111A; border: 1px solid rgba(255,255,255,.1); animation-delay: 0.05s">
+<img src="images/sim-salon.webp" alt="Simülasyon kokpitleri — Yan yana yarış, kavisli ekranlar" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block">
 <figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 18px 16px; background: linear-gradient(180deg, transparent, rgba(7,7,12,.92))">
-<div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Simülasyon kokpiti</div>
-<div style="font-size: 13px; color: #C9C9D6; margin-top: 4px">Moza R3 ve kavisli monitör</div>
+<div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Simülasyon kokpitleri</div>
+<div style="font-size: 13px; color: #C9C9D6; margin-top: 4px">Yan yana yarış, kavisli ekranlar</div>
 </figcaption>
 </figure>
-<figure class="tps-gal tps-g2" style="margin: 0; position: relative; overflow: hidden; border-radius: 22px; aspect-ratio: 3 / 4; background: #11111A; border: 1px solid rgba(255,255,255,.1)">
-<img src="images/loca.webp" alt="Oyun odası — Geniş koltuklar, büyük ekran" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center bottom; display: block">
-<figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 18px 16px; background: linear-gradient(180deg, transparent, rgba(7,7,12,.92))">
-<div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Oyun odası</div>
-<div style="font-size: 13px; color: #C9C9D6; margin-top: 4px">Geniş koltuklar, büyük ekran</div>
-</figcaption>
-</figure>
-<figure class="tps-gal tps-g3" style="margin: 0; position: relative; overflow: hidden; border-radius: 22px; aspect-ratio: 3 / 4; background: #11111A; border: 1px solid rgba(255,255,255,.1)">
-<img src="images/neon.webp" alt="Neon salon — Maç keyfi kırmızı ışıkta" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; display: block">
+<figure class="tps-gal tps-bento tps-b-tall" style="margin: 0; position: relative; overflow: hidden; border-radius: 22px; background: #11111A; border: 1px solid rgba(255,255,255,.1); animation-delay: 0.13s">
+<img src="images/neon-pes.webp" alt="Neon salon — Maç keyfi pembe ışıkta" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block">
 <figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 18px 16px; background: linear-gradient(180deg, transparent, rgba(7,7,12,.92))">
 <div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Neon salon</div>
-<div style="font-size: 13px; color: #C9C9D6; margin-top: 4px">Maç keyfi kırmızı ışıkta</div>
+<div style="font-size: 13px; color: #C9C9D6; margin-top: 4px">Maç keyfi pembe ışıkta</div>
 </figcaption>
 </figure>
-<figure class="tps-gal tps-g4" style="margin: 0; position: relative; overflow: hidden; border-radius: 22px; aspect-ratio: 3 / 4; background: #11111A; border: 1px solid rgba(255,255,255,.1)">
-<img src="images/masa.webp" alt="Standart Masa — Arkadaşlarla rahat bir maç" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block">
+<figure class="tps-gal tps-bento tps-b-tall" style="margin: 0; position: relative; overflow: hidden; border-radius: 22px; background: #11111A; border: 1px solid rgba(255,255,255,.1); animation-delay: 0.21s">
+<img src="images/vip-fc.webp" alt="Özel oda — Kırmızı neon, dev ekran" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block">
 <figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 18px 16px; background: linear-gradient(180deg, transparent, rgba(7,7,12,.92))">
-<div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Standart Masa</div>
-<div style="font-size: 13px; color: #C9C9D6; margin-top: 4px">Arkadaşlarla rahat bir maç</div>
+<div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Özel oda</div>
+<div style="font-size: 13px; color: #C9C9D6; margin-top: 4px">Kırmızı neon, dev ekran</div>
 </figcaption>
 </figure>
-<figure class="tps-gal tps-g5" style="margin: 0; position: relative; overflow: hidden; border-radius: 22px; aspect-ratio: 3 / 4; background: #11111A; border: 1px solid rgba(255,255,255,.1)">
-<img src="images/bar.webp" alt="Atmosfer — Neon ışıklar, sis ve oyun" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block">
+<figure class="tps-gal tps-bento " style="margin: 0; position: relative; overflow: hidden; border-radius: 22px; background: #11111A; border: 1px solid rgba(255,255,255,.1); animation-delay: 0.29s">
+<img src="images/kokpit-vites.webp" alt="Direksiyon ve H vites — Moza R3 + Thrustmaster H" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block">
 <figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 18px 16px; background: linear-gradient(180deg, transparent, rgba(7,7,12,.92))">
-<div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Atmosfer</div>
-<div style="font-size: 13px; color: #C9C9D6; margin-top: 4px">Neon ışıklar, sis ve oyun</div>
+<div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Direksiyon ve H vites</div>
+<div style="font-size: 13px; color: #C9C9D6; margin-top: 4px">Moza R3 + Thrustmaster H</div>
+</figcaption>
+</figure>
+<figure class="tps-gal tps-bento " style="margin: 0; position: relative; overflow: hidden; border-radius: 22px; background: #11111A; border: 1px solid rgba(255,255,255,.1); animation-delay: 0.37s">
+<img src="images/direksiyon.webp" alt="Yarış direksiyonu — Tüm kontroller elinin altında" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 50%; display: block">
+<figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 18px 16px; background: linear-gradient(180deg, transparent, rgba(7,7,12,.92))">
+<div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Yarış direksiyonu</div>
+<div style="font-size: 13px; color: #C9C9D6; margin-top: 4px">Tüm kontroller elinin altında</div>
+</figcaption>
+</figure>
+<figure class="tps-gal tps-bento " style="margin: 0; position: relative; overflow: hidden; border-radius: 22px; background: #11111A; border: 1px solid rgba(255,255,255,.1); animation-delay: 0.45s">
+<img src="images/oda-gta.webp" alt="Oyun odası — Rahat koltuklar, büyük ekran" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block">
+<figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 18px 16px; background: linear-gradient(180deg, transparent, rgba(7,7,12,.92))">
+<div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Oyun odası</div>
+<div style="font-size: 13px; color: #C9C9D6; margin-top: 4px">Rahat koltuklar, büyük ekran</div>
+</figcaption>
+</figure>
+<figure class="tps-gal tps-bento " style="margin: 0; position: relative; overflow: hidden; border-radius: 22px; background: #11111A; border: 1px solid rgba(255,255,255,.1); animation-delay: 0.53s">
+<img src="images/moza.webp" alt="Moza R3 — Direct drive güç ünitesi" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block">
+<figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 18px 16px; background: linear-gradient(180deg, transparent, rgba(7,7,12,.92))">
+<div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Moza R3</div>
+<div style="font-size: 13px; color: #C9C9D6; margin-top: 4px">Direct drive güç ünitesi</div>
 </figcaption>
 </figure>
 </div>
@@ -581,19 +605,19 @@ Yol tarifi al</a>
 (function(){
   var data = {
       std: {
-        photo: 'images/masa.webp', photoPos: 'center 55%', tab: 'Standart Masa', jp: 'スタンダード', title: 'Standart Masa', color: '#5B82FF', glow: 'rgba(91,130,255,.28)',
+        photo: 'images/oda-gta.webp', photoPos: 'center 62%', tab: 'Standart Masa', jp: 'スタンダード', title: 'Standart Masa', color: '#5B82FF', glow: 'rgba(91,130,255,.28)',
         size: '55"', screenLabel: '55 İNÇ TELEVİZYON', ratio: 55,
         desc: 'Arkadaşlarınla rahat bir masa, PlayStation 5 ve 55" televizyon. Hızlı bir maç ya da uzun bir seri için ideal.',
         specs: [{ k: 'Konsol', v: 'PlayStation 5' }, { k: 'Ekran', v: '55" TV' }, { k: 'Kişi', v: '2 kişi (+75 ₺/ek kol)' }, { k: 'Fiyat', v: '250 ₺ / saat' }]
       },
       vip: {
-        photo: 'images/loca.webp', photoPos: 'center 75%', tab: 'VIP Loca', jp: 'ブイアイピー', title: 'VIP Loca', color: '#FF2B2B', glow: 'rgba(255,43,43,.32)',
+        photo: 'images/vip-fc.webp', photoPos: 'center 60%', tab: 'VIP Loca', jp: 'ブイアイピー', title: 'VIP Loca', color: '#FF2B2B', glow: 'rgba(255,43,43,.32)',
         size: '65"', screenLabel: '65 İNÇ TELEVİZYON', ratio: 65,
         desc: 'Kendine ait özel bir alan. PlayStation 5 ve dev 65" televizyonla ekibinle baş başa oyna.',
         specs: [{ k: 'Konsol', v: 'PlayStation 5' }, { k: 'Ekran', v: '65" TV' }, { k: 'Kişi', v: '2 kişi (+75 ₺/ek kol)' }, { k: 'Fiyat', v: '350 ₺ / saat' }]
       },
       sim: {
-        photo: 'images/sim.webp', photoPos: 'center 55%', tab: 'Simülasyon', jp: 'シミュレーション', title: 'Yarış simülasyonu', color: '#FFFFFF', glow: 'rgba(255,255,255,.26)',
+        photo: 'images/sim-salon.webp', photoPos: 'center 50%', tab: 'Simülasyon', jp: 'シミュレーション', title: 'Yarış simülasyonu', color: '#FFFFFF', glow: 'rgba(255,255,255,.26)',
         size: '180Hz', screenLabel: '34 İNÇ 180Hz MONİTÖR', ratio: 50,
         desc: 'Moza R3 direksiyon seti, Thrustmaster H manuel vites ve 34" 180Hz monitörle gerçek bir kokpit deneyimi.',
         specs: [{ k: 'Direksiyon', v: 'Moza R3' }, { k: 'Vites', v: 'Thrustmaster H' }, { k: 'Monitör', v: '34" 180Hz' }, { k: 'Kişi', v: '1 kişi' }, { k: 'Fiyat', v: '250 ₺ / saat' }]
