@@ -136,6 +136,10 @@ html{scroll-behavior:smooth}
 @media (max-width:900px){.tps-bento-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;grid-auto-rows:220px !important}.tps-b-big{grid-column:span 2;grid-row:span 1}.tps-b-tall{grid-row:span 2}}
 .tps-sim-photo img{transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s;filter:saturate(1.1)}
 .tps-card:hover .tps-sim-photo img{transform:scale(1.1);filter:saturate(1.35)}
+@keyframes tpsHzNeedle{0%{transform:rotate(-80deg)}55%{transform:rotate(78deg)}62%{transform:rotate(70deg)}70%,100%{transform:rotate(76deg)}}
+@keyframes tpsHzArc{0%{stroke-dashoffset:100}55%,100%{stroke-dashoffset:4}}
+.tps-hz-needle{animation:tpsHzNeedle 3.2s cubic-bezier(.3,.7,.2,1) infinite}
+.tps-hz-arc{animation:tpsHzArc 3.2s cubic-bezier(.3,.7,.2,1) infinite}
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
 </style>
 <style>.tps-tab{cursor:pointer}.tps-game{overflow:hidden}.tps-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}</style>
@@ -418,7 +422,16 @@ HER GÜN 12:00 – 03:00 · ÇEKMEKÖY
 <div style="font-size: 16px; line-height: 1.6; color: #A3A3B5">Geniş ekran görüş alanı, kokpitte olduğun hissini veriyor.</div>
 </div>
 <div class="tps-card" style="padding: 32px; border-radius: 24px; background: #11111A; border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 16px">
-<div class="tps-sim-photo" style="margin: -32px -32px 4px; height: 170px; overflow: hidden; border-radius: 24px 24px 0 0"><img src="images/direksiyon.webp" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center 45%; display: block"></div>
+<div class="tps-hz-panel" style="margin: -32px -32px 4px; height: 170px; border-radius: 24px 24px 0 0; position: relative; overflow: hidden; background: radial-gradient(60% 80% at 50% 70%, rgba(255,43,43,.28), #0C0C14 70%); display: flex; align-items: center; justify-content: center">
+<svg width="150" height="110" viewBox="0 0 150 110" role="img" aria-label="180Hz hız göstergesi" fill="none">
+<path d="M15 95a60 60 0 0 1 120 0" stroke="rgba(255,255,255,.15)" stroke-width="10" stroke-linecap="round"/>
+<path class="tps-hz-arc" d="M15 95a60 60 0 0 1 120 0" stroke="#FF2B2B" stroke-width="10" stroke-linecap="round" pathLength="100" stroke-dasharray="100" style="filter: drop-shadow(0 0 8px #FF2B2B)"/>
+<g stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round"><path d="M20 70l8 4M38 44l6 6M75 32v9M112 44l-6 6M130 70l-8 4"/></g>
+<g class="tps-hz-needle" style="transform-origin: 75px 95px"><path d="M75 95L75 45" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/></g>
+<circle cx="75" cy="95" r="8" fill="#FFFFFF"/><circle cx="75" cy="95" r="3.5" fill="#FF2B2B"/>
+</svg>
+<span style="position: absolute; right: 18px; top: 14px; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: .1em; color: #FF2B2B">MAX</span>
+</div>
 <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#FF2B2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"></path></svg>
 <div style="font-family: Unbounded, sans-serif; font-weight: 700; font-size: 24px; color: #FFFFFF">180Hz</div>
 <div style="font-size: 16px; line-height: 1.6; color: #A3A3B5">Akıcı görüntü, gecikmesiz tepki. Fren noktasını kaçırmak yok.</div>
