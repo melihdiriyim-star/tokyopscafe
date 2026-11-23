@@ -129,6 +129,7 @@ html{scroll-behavior:smooth}
 .tps-ring{animation:tpsRing 18s linear infinite}
 .tps-ring:hover{animation-play-state:paused}
 .tps-game{transition:box-shadow .3s}
+@media (max-width:900px){.tps-deco-ring{display:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
 </style>
 <style>.tps-tab{cursor:pointer}.tps-game{overflow:hidden}.tps-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}</style>
@@ -167,7 +168,7 @@ Rezervasyon</a>
 <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,7,12,.55), rgba(7,7,12,.82) 70%, #07070C)"></div>
 <div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(60% 50% at 50% 38%, rgba(255,43,43,.22), transparent 70%)"></div>
 
-<div aria-hidden="true" class="tps-spin" style="position: absolute; left: 1%; top: 6%; width: 120px; height: 120px; border-radius: 50%; border: 2px dashed rgba(255,255,255,.55)"></div>
+<div aria-hidden="true" class="tps-spin tps-deco-ring" style="position: absolute; left: 1%; top: 6%; width: 120px; height: 120px; border-radius: 50%; border: 2px dashed rgba(255,255,255,.55)"></div>
 <div aria-hidden="true" class="tps-float" style="position: absolute; left: 12%; bottom: 22%; width: 18px; height: 18px; border-radius: 50%; background: #5B82FF; box-shadow: 0 0 24px #5B82FF"></div>
 <div aria-hidden="true" class="tps-float-slow" style="position: absolute; right: 18%; bottom: 28%; width: 12px; height: 12px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 20px #FFFFFF"></div>
 
@@ -177,7 +178,7 @@ Rezervasyon</a>
 <span class="tps-blink" style="width: 8px; height: 8px; border-radius: 50%; background: #5B82FF"></span>
 HER GÜN 12:00 – 03:00 · ÇEKMEKÖY
 </div>
-<h1 class="tps-rise-2" style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 900; font-size: clamp(40px, 6.6vw, 90px); line-height: .95; letter-spacing: -.02em; color: #5b82ff"><span style="display: block; color: rgb(255, 255, 255)">TOKYO SİMÜLASYON</span><span class="tps-flicker" style="display: block; color: rgb(255, 43, 43)">PS CAFE</span></h1>
+<h1 class="tps-rise-2" style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 900; font-size: clamp(40px, 6.6vw, 90px); line-height: .95; letter-spacing: -.02em; color: #5b82ff"><span style="display: block; color: rgb(255, 255, 255)">TOKYO</span><span style="display: block; margin: 6px 0 8px; font-size: .42em; letter-spacing: .18em; line-height: 1.1; color: rgb(255, 255, 255)">SİMÜLASYON</span><span class="tps-flicker" style="display: block; color: rgb(255, 43, 43)">PS CAFE</span></h1>
 <p class="tps-rise-3" style="margin: 0; max-width: 620px; font-size: clamp(18px, 2vw, 22px); line-height: 1.55; color: #C9C9D6">Kafede oyna, simülasyonda yarış ya da PlayStation 5'i evine götür. Diğer kafelerden farkımız: PS5 kiralama hizmeti.</p>
 <div class="tps-rise-4" style="display: flex; flex-wrap: wrap; gap: 14px">
 <a class="tps-btn tps-pulse" href="#kiralama" style="padding: 18px 30px; border-radius: 14px; background: #FF2B2B; color: #07070C; font-weight: 700; font-size: 17px">PS5 Kirala</a>
